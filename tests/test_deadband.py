@@ -3,8 +3,8 @@ import importlib
 import pytest
 
 def makedeadbandlib():
-    source_code = open("src/deadband/deadband.c").read()
-    includes = open("src/deadband/deadband.h").read()
+    source_code = open("../src/deadband/deadband.c").read()
+    includes = open("../src/deadband/deadband.h").read()
 
     includes = includes.replace(r'#include <stdint.h>',"")
     source_code = source_code.replace(r'#include "deadband.h"', includes)
