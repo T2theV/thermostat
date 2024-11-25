@@ -25,7 +25,7 @@ modlib = mod_DBND.lib
 
 @pytest.mark.parametrize("max",range(0,250))
 @pytest.mark.parametrize("min",range(0,250))
-@pytest.mark.parametrize("hysteresis", range(95,100))
+@pytest.mark.parametrize("hysteresis", range(1,10))
 def test_deadband_init(max,min,hysteresis):
     teststruct = modffi.new("struct DBND_struct *")
     testOK = modlib.DBND_initDeadband(teststruct , max, min, hysteresis)
