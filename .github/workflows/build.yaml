@@ -16,5 +16,5 @@ jobs:
         run: |
           cd tests
           gcc --coverage --shared -o deadband.so -I ../src ../src/deadband/deadband.c
-          pytest test_deadband_ABI_mode.py
+          pytest test_deadband-ABI-mode.py
           gcovr -r ../src/deadband .
