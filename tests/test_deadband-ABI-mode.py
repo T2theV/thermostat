@@ -12,7 +12,7 @@ void setGate(int value);
 includes)
 
 tb = ffi.dlopen("./gating.so",ffi.RTLD_GLOBAL)
-C = ffi.dlopen("./deadband.so",ffi.RTLD_GLOBAL)
+C = ffi.dlopen("./deadband.so")
 
 @pytest.mark.parametrize("max",range(0,5))# 250))
 @pytest.mark.parametrize("min",range(0,5))#250))
