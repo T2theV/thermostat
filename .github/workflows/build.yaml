@@ -21,5 +21,6 @@ jobs:
       - name: report covrage
         run: |    
           echo '```' >> $GITHUB_STEP_SUMMARY
+          cd tests
           gcovr -r ../src/deadband . >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
