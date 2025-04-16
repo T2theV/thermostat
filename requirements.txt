@@ -1,3 +1,4 @@
 pytest
 cffi
 gcovr
+pytest-md-report
