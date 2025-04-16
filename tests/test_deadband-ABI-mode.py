@@ -18,8 +18,8 @@ includes)
 testing = ffi.dlopen("./gating.so",ffi.RTLD_GLOBAL)
 C = ffi.dlopen("./deadband.so",ffi.RTLD_GLOBAL)
 
-@pytest.mark.parametrize("max",range(0,3))#250))
-@pytest.mark.parametrize("min",range(0,3))#250))
+@pytest.mark.parametrize("max",range(0,250))
+@pytest.mark.parametrize("min",range(0,250))
 @pytest.mark.parametrize("hysteresis", range(1,10))
 def test_deadband_init(max,min,hysteresis):
     teststruct = ffi.new("struct DBND_struct *")
@@ -31,8 +31,8 @@ def test_deadband_init(max,min,hysteresis):
 
     assert goldeneval1 == eval2 
 
-@pytest.mark.parametrize("max",range(0,3))#250))
-@pytest.mark.parametrize("min",range(0,3))#250))
+@pytest.mark.parametrize("max",range(0,250))
+@pytest.mark.parametrize("min",range(0,250))
 @pytest.mark.parametrize("hysteresis", range(1,10))
 def test_deadband_init_1(max,min,hysteresis):
     teststruct = ffi.new("struct DBND_struct *")
