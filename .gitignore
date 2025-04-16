@@ -57,3 +57,7 @@ Mkfile.old
 dkms.conf
 
 _*
+
+#code files
+.vscode
+.continue
