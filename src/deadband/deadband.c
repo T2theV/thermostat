@@ -12,6 +12,9 @@ int DBND_initDeadband(DBNDt_Deadband *deadband, uint16_t max, uint16_t min, uint
     const bool isValidHysteresis = !(hysteresis > DBND_HYST_MAX_VAL);
     const bool isValidMaxMinusMin = ((int)max - (int)min) >= (int)hysteresis;
 
+    if (isGatingActive())
+        return -128;
+
     if (!(isValidHysteresis && isValidMaxMinusMin))
         return DBND_ERROR_INIT_BAD;
 
