@@ -17,7 +17,8 @@ jobs:
           cd tests
           gcc --coverage --shared -fPIC -o deadband.so -I ../src ../src/deadband/deadband.c
           gcc  --shared -fPIC -o gating.so -I test_build_c test_build_c/gating.c
-          pytest --md-report --md-report-color=never test_deadband-ABI-mode.py >> $GITHUB_STEP_SUMMARY
+          pytest --md-report --md_report_verbose=1 --md-report-output=ptr.md --md-report-flavor=github test_deadband-ABI-mode.py 
+          cat ptr.md >> $GITHUB_STEP_SUMMARY
       - name: report covrage
         run: |    
           echo '```' >> $GITHUB_STEP_SUMMARY
